@@ -4,6 +4,7 @@ namespace backend\models;
 
 use Yii;
 
+
 class Apples extends \yii\db\ActiveRecord
 {
     /**
@@ -22,7 +23,7 @@ class Apples extends \yii\db\ActiveRecord
         return [
             [['color'], 'required'],
             [['date_of_apperance', 'date_of_fall'], 'safe'],
-            [['status', 'status_of_ate'], 'integer'],
+            [['status', 'size'], 'integer'],
             [['color'], 'string', 'max' => 10],
         ];
     }
@@ -38,7 +39,7 @@ class Apples extends \yii\db\ActiveRecord
             'date_of_apperance' => 'Date Of Apperance',
             'date_of_fall' => 'Date Of Fall',
             'status' => 'Status',
-            'status_of_ate' => 'Status Of Ate',
+            'size' => 'Size',
         ];
     }
 }

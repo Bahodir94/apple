@@ -17,7 +17,7 @@ class ApplesSearch extends Apples
     public function rules()
     {
         return [
-            [['id', 'status', 'status_of_ate'], 'integer'],
+            [['id', 'status', 'size'], 'integer'],
             [['color', 'date_of_apperance', 'date_of_fall'], 'safe'],
         ];
     }
@@ -57,12 +57,13 @@ class ApplesSearch extends Apples
         }
 
         // grid filtering conditions
+        $query->andFilterWhere(['!=', 'size', 0]);
         $query->andFilterWhere([
             'id' => $this->id,
             'date_of_apperance' => $this->date_of_apperance,
             'date_of_fall' => $this->date_of_fall,
             'status' => $this->status,
-            'status_of_ate' => $this->status_of_ate,
+            // 'status_of_ate' => $this->status_of_ate,
         ]);
 
         $query->andFilterWhere(['like', 'color', $this->color]);

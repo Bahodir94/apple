@@ -15,10 +15,10 @@ class m200907_114836_create_apples_table extends Migration
         $this->createTable('{{%apples}}', [
             'id' => $this->primaryKey(),
             'color' => $this->string(10)->notNull(),
-            'date_of_apperance' => $this->timestamp(),
-            'date_of_fall' => $this->timestamp(),
+            'date_of_apperance' => $this->integer(),
+            'date_of_fall' => $this->integer(),
             'status' => $this->integer()->notNull()->defaultValue(1),
-            'status_of_ate' => $this->integer()->notNull()->defaultValue(100),
+            'size' => $this->integer()->notNull()->defaultValue(100),
         ]);
     }
 
